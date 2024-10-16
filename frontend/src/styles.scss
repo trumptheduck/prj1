@@ -1,0 +1,37 @@
+@import "ng-zorro-antd/ng-zorro-antd.min.css";
+
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0px;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    --r2-color-gold: rgb(197, 157, 95);
+    --r2-color-gold-a07: rgb(197, 157, 95, 0.7);
+    --r2-color-black18: rgb(19, 18, 18);
+}
+
+.r2{
+    &-fcol {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &-frow {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &-fcenter {
+        align-items: center;
+        justify-content: center;
+    }
+    &-fgrow {
+        flex-grow: 1;
+    }
+    &-f-jc-spabw{
+        justify-content: space-between;
+    }
+}
+
+

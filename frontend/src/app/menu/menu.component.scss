@@ -1,0 +1,164 @@
+p {
+    margin: 0px;
+}
+
+.banner{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    color: white;
+
+    &__image{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 300px;
+        background-image: url(../../assets/images/banner1.jpg);
+        background-size: cover;
+        filter: brightness(0.4);
+        z-index: -1;
+        background-attachment: fixed;
+    }
+
+    &__title{
+        font-family: "Montserrat", sans-serif;
+        margin-left: 120px;
+        font-size: 50px;
+        line-height: 1.3;
+        font-weight: 700;
+    }
+
+    &__subtitle{
+        margin-left: 120px;
+        font-size: 18px;
+        filter: opacity(0.7);
+    }
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    &__heading{
+        position: relative;
+        top: 20px;
+        font-family: 'Autumn Flowers', sans-serif;
+        font-size: 32px;
+        font-style: italic;
+        filter: opacity(0.3);
+    }
+
+    &__title{
+        font-size: 32px;
+        font-weight: 800;
+        font-stretch: condensed;
+    }
+
+    &__divider{
+        filter: opacity(0.5);
+    }
+
+    &__description{
+        margin-top: 20px;
+        width: 800px;
+
+        color: gray;
+        text-align: center;
+        line-height: 2;
+        font-size: 17px;
+        font-stretch: condensed;
+        font-style: italic;
+    }
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    padding-left: 120px;
+    padding-right: 120px;
+
+    &__title{
+        padding-bottom: 40px;
+        font-size: 32px;
+        font-family: 'Autumn Flowers', sans-serif;
+        color: var(--r2-color-gold);
+        font-style: italic;
+    }
+
+    &__item{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 21px;
+        width: 100%;
+        max-width: 1000px;
+
+        &__wrapper{
+            padding-left: 40px;
+            padding-right: 30px;
+        }
+
+        &__heading{
+            width: 100%;
+        }
+
+        &__price{
+            font-weight: 700;
+        }
+
+        &__description{
+            margin-top: 16px;
+            font-size: 17px;
+            word-spacing: 2px;
+            line-height: 1.6;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        &__divider{
+            margin-left: 28px;
+            margin-right: 28px;
+            flex-grow: 1;
+            border-top: 2px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        &__ratings{
+            font-size: 16px;
+            margin-top: 16px;
+            color: var(--r2-color-gold);
+        }
+
+        &__order{
+            display: flex;
+            justify-content: center;
+            padding: 4px 15px;
+            align-items: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: var(--r2-color-gold);
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+
+            &:hover{
+                filter: opacity(0.7);
+            }
+        }
+    }
+    
+}
+
+.float {
+    position: fixed;
+    z-index: 10;
+    bottom: 32px;
+    right: 32px;
+}

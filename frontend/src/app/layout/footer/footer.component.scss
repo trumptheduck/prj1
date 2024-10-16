@@ -1,0 +1,21 @@
+.main{
+    margin-top: 120px;
+    width: 100%;
+    background-image: url(../../../assets/images/footer.webp);
+    background-size: cover;
+    background-position: 0% 70%;
+
+    &__logo{
+        padding-top: 100px;
+        padding-bottom: 90px;
+    }
+
+    &__copyright{
+        background-color: var(--r2-color-black18);
+        padding-top: 12px;
+        padding-bottom: 12px;
+        p{
+            color: gray;
+        }
+    }
+}

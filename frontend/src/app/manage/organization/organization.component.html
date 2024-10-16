@@ -1,0 +1,45 @@
+<nz-breadcrumb>
+    <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+    <nz-breadcrumb-item>Manage</nz-breadcrumb-item>
+    <nz-breadcrumb-item>Organizations</nz-breadcrumb-item>
+  </nz-breadcrumb>
+<div class="inner-content">
+    <button nz-button [nzType]="'default'" style="margin-bottom: 20px;" (click)="showModal()">Create Organization</button>
+    <div *ngFor="let org of organizations" class="item">
+        <nz-card [nzTitle]="org.name" [nzExtra]="extra">
+            <!-- <p>{{org._id}}</p> -->
+            <p>{{org.description}}</p>
+        </nz-card>
+        <ng-template #extra>
+            <button
+                nz-button nzDanger
+                [nzType]="'default'"
+                nz-popconfirm
+                nzPopconfirmTitle="Are you sure you want to delete this?"
+                nzPopconfirmPlacement="top"
+                (nzOnConfirm)="deleteOrganization(org)"
+            >Delete</button>
+            <button nz-button [nzType]="'default'" (click)="showModal(org)">Edit</button>
+            <button nz-button [nzType]="'default'" (click)="viewRestaurants(org)">View Restaurants</button>
+        </ng-template>
+    </div>
+</div>
+
+<nz-modal
+    [(nzVisible)]="isModalVisible"
+    [nzTitle]="modalTitle"
+    (nzOnCancel)="handleCancel()"
+    (nzOnOk)="handleOk()"
+    [nzOkLoading]="isModalLoading"
+>
+    <div *nzModalContent>
+        <input type="text" nz-input [(ngModel)]="currentOrganization.name" placeholder="Organization name" />
+        <textarea
+            type="text"
+            nz-input
+            [(ngModel)]="currentOrganization.description"
+            placeholder="Description"
+            rows="5"
+        ></textarea>
+    </div>
+</nz-modal>

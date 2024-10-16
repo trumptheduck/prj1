@@ -1,0 +1,25 @@
+<div *ngIf="item" class="item r2-frow">
+    <img width="180" height="180" [src]="item?.thumbnail" alt="" class="item__image">
+    <div class="item__wrapper r2-fcol r2-fgrow">
+        <div class="item__heading r2-frow r2-fcenter">
+            <p class="item__name">{{item?.name}}/p>
+            <div class="item__divider"></div>
+            <p class="item__price">${{item?.price}}</p>
+        </div>
+        <p class="item__description">{{item?.description}}</p>
+        <div class="item__heading r2-frow r2-f-jc-spabw">
+            <div class="item__ratings">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half"></i>
+            </div>
+            <div class="item__order r2-frow">
+                <i (click)="removeItem()" class="fa-solid fa-minus" style="cursor: pointer;"></i>
+                <p>{{item?.count}}</p>
+                <i (click)="addItem()" class="fa-solid fa-plus" style="cursor: pointer;"></i>
+            </div>
+        </div>
+    </div>
+</div>

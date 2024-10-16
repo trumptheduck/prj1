@@ -1,0 +1,92 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLPackage</id><coordinates><x>720</x><y>267</y><w>200</w><h>240</h></coordinates><panel_attributes>SocketServers
+--
+bg=blue
+transparency=0
+	</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>480</x><y>267</y><w>200</w><h>240</h></coordinates><panel_attributes>NestJS Server
+--
+bg=blue
+transparency=0
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>500</x><y>307</y><w>140</w><h>70</h></coordinates><panel_attributes>Mongoose
+--
+bg=orange
+transparency=0
+Observe data changes</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>500</x><y>407</y><w>140</w><h>70</h></coordinates><panel_attributes>NestJS Controller
+--
+bg=orange
+transparency=0
+Handle API calls</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>347</y><w>140</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>120;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>510</x><y>367</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>367</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>750</x><y>407</y><w>140</w><h>70</h></coordinates><panel_attributes>ExpressJS APIs
+--
+bg=orange
+transparency=0
+Handle API updates
+from Nest server </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>750</x><y>307</y><w>140</w><h>70</h></coordinates><panel_attributes>SocketIO
+--
+bg=orange
+transparency=0
+Update realtime-data
+to connected user</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>0</x><y>647</y><w>680</w><h>230</h></coordinates><panel_attributes>Angular Web Client
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>0</x><y>207</y><w>390</w><h>410</h></coordinates><panel_attributes>Flutter Application
+--
+bg=green</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>730</x><y>277</y><w>200</w><h>240</h></coordinates><panel_attributes>SocketServer
+--
+bg=blue
+layer=-1
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>740</x><y>287</y><w>200</w><h>240</h></coordinates><panel_attributes>SocketServer
+--
+bg=blue
+layer=-2
+transparency=0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>460</x><y>217</y><w>520</w><h>410</h></coordinates><panel_attributes>Webserver
+--
+bg=orange
+layer=-10</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>480</x><y>527</y><w>460</w><h>70</h></coordinates><panel_attributes>NGiNX
+--
+bg=blue
+transparency=0
+Serve webclient and resources</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>587</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>467</y><w>30</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;220;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>530</x><y>467</y><w>30</w><h>240</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;220</additional_attributes></element><element><id>Text</id><coordinates><x>560</x><y>617</y><w>100</w><h>70</h></coordinates><panel_attributes>Get and update data
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>367</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>230</x><y>337</y><w>140</w><h>70</h></coordinates><panel_attributes>Repository
+--
+bg=orange
+Store data and makes
+API calls</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>40</x><y>427</y><w>140</w><h>70</h></coordinates><panel_attributes>BLoC
+--
+bg=orange
+Process Application
+Business Logic</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>230</x><y>517</y><w>140</w><h>70</h></coordinates><panel_attributes>User Interface
+--
+bg=orange
+Display an interface
+for the user</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>230</x><y>237</y><w>140</w><h>70</h></coordinates><panel_attributes>SocketIO Client
+--
+bg=orange
+Connect and handle
+realtime data</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>40</x><y>277</y><w>140</w><h>80</h></coordinates><panel_attributes>UnifiedDataStream
+--
+bg=orange
+Stream data from both
+sources</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>277</y><w>80</w><h>50</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;30;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>337</y><w>80</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;40</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>347</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>150</x><y>387</y><w>100</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>80;10;10;60</additional_attributes></element><element><id>Text</id><coordinates><x>210</x><y>407</y><w>100</w><h>30</h></coordinates><panel_attributes>Request Data
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>110</x><y>377</y><w>100</w><h>30</h></coordinates><panel_attributes>DataStream
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>467</y><w>150</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;50;130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>487</y><w>150</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80;130;80</additional_attributes></element><element><id>Text</id><coordinates><x>210</x><y>457</y><w>100</w><h>30</h></coordinates><panel_attributes>State
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>130</x><y>547</y><w>100</w><h>30</h></coordinates><panel_attributes>Event
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>187</y><w>480</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;70;10;10;460;10;460;120</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>510</x><y>787</y><w>140</w><h>70</h></coordinates><panel_attributes>SocketIO Client
+--
+bg=orange
+Connect and handle
+realtime data</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>510</x><y>687</y><w>140</w><h>70</h></coordinates><panel_attributes>Repository
+--
+bg=orange
+Store data and makes
+API calls</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>320</x><y>737</y><w>140</w><h>70</h></coordinates><panel_attributes>Service
+--
+bg=orange
+Handle Application
+Logic</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>50</x><y>737</y><w>140</w><h>70</h></coordinates><panel_attributes>User Interface
+--
+bg=orange
+Display an interface
+for the user</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>767</y><w>160</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element><element><id>Text</id><coordinates><x>210</x><y>757</y><w>130</w><h>30</h></coordinates><panel_attributes>RxJS Observable
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>337</y><w>130</w><h>530</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;510;60;510;60;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>727</y><w>80</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;50;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>777</y><w>80</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;50</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>777</y><w>160</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>140;10;10;10</additional_attributes></element><element><id>Text</id><coordinates><x>220</x><y>787</y><w>130</w><h>30</h></coordinates><panel_attributes>Function call
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>707</y><w>80</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;50</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>450</x><y>67</y><w>530</w><h>110</h></coordinates><panel_attributes>MongoDB Database
+--
+bg=red
+Handle saving data on the cloud</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>570</x><y>167</y><w>30</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>167</y><w>30</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;160;10;10</additional_attributes></element></diagram>

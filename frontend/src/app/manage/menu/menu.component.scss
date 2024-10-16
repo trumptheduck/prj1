@@ -1,0 +1,24 @@
+.inner-content {
+    background: #fff;
+    padding: 24px;
+    min-height: 1000px;
+}
+
+nz-breadcrumb {
+    margin: 16px 0;
+}
+
+button {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+input, textarea {
+    margin: 4px;
+    resize: none;
+}
+
+:host ::ng-deep .avatar-uploader > .ant-upload {
+    width: 128px;
+    height: 128px;
+}

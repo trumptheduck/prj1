@@ -1,0 +1,46 @@
+<div *ngIf="order" style="padding: 80px 100px">
+    <h2>Order status: {{getStatus(order.status)}}</h2>
+    <h2>Item(s): {{order.items.length}}</h2>
+    <div *ngFor="let item of order.items, index as itemIndex" class="menu__item r2-fcol">
+        <div class="r2-frow" style="margin-bottom: 8px;">
+            <img width="80" height="80" [src]="renderImage(item.thumbnail)" alt="" class="menu__item__image">
+            <div class="menu__item__wrapper r2-fcol r2-fgrow">
+                <div class="menu__item__heading r2-frow r2-f-jc-spabw">
+                    <div>
+                        <p>{{item.name}}</p>
+                        <p style="font-size: 16px;">${{item.price}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nz-collapse>
+            <nz-collapse-panel nzHeader="Options" [nzActive]="false">
+                <section>
+                    <div *ngFor="let option of item.options" style="padding-left: 16px; padding-bottom: 4px; padding-top: 4px;">
+                        <div>{{option.name}}</div>
+                        <div style="color: gray;" *ngIf="option.description">{{option.description}}</div>
+                        <div *ngFor="let selection of option.selections, index as i" style="padding-left: 16px; padding-bottom: 4px; padding-top: 4px; border: 1px rgb(199, 199, 199) solid;">
+                            <div class="r2-frow">
+                                <div *ngIf="!option.multi" style="margin-top: 2px; margin-right: 4px;">
+                                    <input type="checkbox" [checked]="selection.selected" readonly>
+                                </div>
+                                <div>
+                                    <div>{{selection.name}}</div>
+                                    <div style="color: gray;" *ngIf="selection.description">{{option.description}}</div>
+                                    <div *ngIf="selection.price > 0">${{selection.price}}</div>
+                                </div>
+                            </div>
+                            <div *ngIf="option.multi">
+                                <label for="html">Select: </label>
+                                <input type="checkbox" style="margin-top: 2px; margin-left: 4px;" [(ngModel)]="selection.selected" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </nz-collapse-panel>
+        </nz-collapse>
+    </div>
+    <h3>Subtotal: ${{calculateSubtotal()}}</h3>
+    <h3>Total: ${{calculateTotal()}}</h3>
+    <button nz-button [nzType]="'default'" style="margin-bottom: 20px;" (click)="finishOrder()">Finish order</button>
+</div>

@@ -1,0 +1,8 @@
+<section>
+    <div *ngFor="let item of restaurants" style="border: 1px gray solid; padding: 16px;">
+        <div>Name: {{item.name}}</div>
+        <div>Desc: {{item.description}}</div>
+        <div>ID: {{item._id}}</div>
+        <a [routerLink]="['/menu']" [queryParams]="{id: item._id}">Mở nhà hàng</a>
+    </div>
+</section>

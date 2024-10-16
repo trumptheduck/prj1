@@ -1,0 +1,93 @@
+<section class="banner">
+    <div class="banner__image"></div>
+    <p class="banner__title">{{restaurant?.name}}</p>
+    <p class="banner__subtitle">Indulge in Top Quality, Gourmet Barbecue</p>
+</section>
+<section class="main">
+    <div class="main__heading">Make your Order</div>
+    <div class="main__title">Dishes On Our Menu</div>
+    <img height="50" class="main__divider" src="../../assets/images/divider.svg">
+    <div class="main__description">{{restaurant?.description}}</div>
+</section>
+<div class="menu">
+    <p class="menu__title">Menu</p>
+    <div *ngFor="let item of items" class="menu__item r2-frow">
+        <img width="180" height="180" [src]="renderImage(item.thumbnail)" alt="" class="menu__item__image">
+        <div class="menu__item__wrapper r2-fcol r2-fgrow">
+            <div class="menu__item__heading r2-frow r2-fcenter">
+                <p class="menu__item__name">{{item.name}}</p>
+                <div class="menu__item__divider"></div>
+                <p class="menu__item__price">${{item.price}}</p>
+            </div>
+            <p class="menu__item__description">{{item.description}}</p>
+            <div class="menu__item__heading r2-frow r2-f-jc-spabw">
+                <div class="menu__item__ratings">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half"></i>
+                </div>
+            <div class="menu__item__order r2-frow" (click)="addItem(item)">+</div>
+        </div>
+    </div>
+</div>
+<nz-modal
+    [(nzVisible)]="isModalVisible"
+    [nzTitle]="'Your order (' + table?.name + ')'"
+    (nzOnCancel)="handleCancel()"
+    (nzOnOk)="handleOk()"
+    [nzOkLoading]="isModalLoading"
+    nzCancelText="Order More"
+    nzOkText="Confirm Order"
+>
+    <div *nzModalContent>
+        <h2>Item(s): {{currentOrder.items.length}}</h2>
+        <div *ngFor="let item of currentOrder.items, index as itemIndex" class="menu__item r2-fcol">
+            <div class="r2-frow" style="margin-bottom: 8px;">
+                <img width="80" height="80" [src]="renderImage(item.thumbnail)" alt="" class="menu__item__image">
+                <div class="menu__item__wrapper r2-fcol r2-fgrow">
+                    <div class="menu__item__heading r2-frow r2-f-jc-spabw">
+                        <div>
+                            <p>{{item.name}}</p>
+                            <p style="font-size: 16px;">${{item.price}}</p>
+                        </div>
+                        <button nz-button nzType="default" nzDanger nzShape="circle" style="margin-top: 4px;" (click)="removeItem(itemIndex)">x</button>
+                    </div>
+                </div>
+            </div>
+            <nz-collapse>
+                <nz-collapse-panel nzHeader="Options" [nzActive]="false">
+                    <section>
+                        <div *ngFor="let option of item.options" style="padding-left: 16px; padding-bottom: 4px; padding-top: 4px;">
+                            <div>{{option.name}}</div>
+                            <div style="color: gray;" *ngIf="option.description">{{option.description}}</div>
+                            <div *ngFor="let selection of option.selections, index as i" style="padding-left: 16px; padding-bottom: 4px; padding-top: 4px; border: 1px rgb(199, 199, 199) solid;">
+                                <div class="r2-frow">
+                                    <div *ngIf="!option.multi" style="margin-top: 2px; margin-right: 4px;">
+                                        <input type="checkbox" [checked]="selection.selected" (change)="selectRadioSelection(option.selections, i)" >
+                                    </div>
+                                    <div>
+                                        <div>{{selection.name}}</div>
+                                        <div style="color: gray;" *ngIf="selection.description">{{option.description}}</div>
+                                        <div *ngIf="selection.price > 0">${{selection.price}}</div>
+                                    </div>
+                                </div>
+                                <div *ngIf="option.multi">
+                                    <label for="html">Select: </label>
+                                    <input type="checkbox" style="margin-top: 2px; margin-left: 4px;" [(ngModel)]="selection.selected">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </nz-collapse-panel>
+            </nz-collapse>
+        </div>
+        <h3>Subtotal: ${{calculateSubtotal()}}</h3>
+        <h3>Total: ${{calculateTotal()}}</h3>
+    </div>
+</nz-modal>
+
+<section class="float">
+    <button nz-button nzType="primary" [nzSize]="'large'" nzShape="circle" (click)="showModal()"><i class="fa-solid fa-cart-shopping"></i></button>
+</section>
